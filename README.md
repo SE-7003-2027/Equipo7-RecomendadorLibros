@@ -74,8 +74,8 @@ Esta sección hay que mantenerla al corriente conforme agreguemos herramientas, 
 1. Clonar el repositorio:
 
    ```bash
-   git clone https://github.com/SE-7003-2027/[nombre-del-repo].git
-   cd [nombre-del-repo]
+   git clone https://github.com/SE-7003-2027/Equipo7-RecomendadorLibros.git
+   cd Equipo7-RecomendadorLibros
    ```
 
 2. Configurar las variables de entorno. Copiar el archivo de ejemplo y llenarlo:
