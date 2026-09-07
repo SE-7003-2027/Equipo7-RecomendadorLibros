@@ -6,7 +6,7 @@ Sistema de recomendación de lecturas disponibles en México, basado en las pref
 
 Repositorio: [https://github.com/SE-7003-2027/Equipo7-RecomendadorLibros](https://github.com/SE-7003-2027/Equipo7-RecomendadorLibros)
 
-[Qué es esto](#qué-es-este-proyecto) · [Equipo 7] · [Features](#features-en-desarrollo) · [Stack](#stack) · [Cómo ejecutarlo](#cómo-ejecutar-el-proyecto-desde-cero) · [Docs](#documentación-adicional)
+[Qué es esto](#qué-es-este-proyecto) · [Equipo 7](#equipo) · [Features](#features-en-desarrollo) · [Stack](#stack) · [Cómo ejecutarlo](#cómo-ejecutar-el-proyecto-desde-cero) · [Docs](#documentación-adicional)
 
 ---
 
