@@ -26,11 +26,11 @@ El proyecto apenas está arrancando, así que la mayoría de los features de aba
 
 ## Equipo
 
-- [Tapia Anrubio Irving Axel] | [425019526]
-- [Torres Nava Hazel] | [N. Cuenta]
-- [Ortíz Vásquez Gustavo Angel] | [N. Cuenta]
-- [Paredes Gónzalez Emiliano Sebastián] | [N. Cuenta]
-- [Pineda Cantú Pablo] | [N. Cuenta]
+- Tapia Anrubio Irving Axel | 425019526
+- Torres Nava Hazel | N. Cuenta
+- Ortíz Vásquez Gustavo Angel | N. Cuenta
+- Paredes Gónzalez Emiliano Sebastián | N. Cuenta
+- Pineda Cantú Pablo | N. Cuenta
 
 ## Features (en desarrollo)
 
