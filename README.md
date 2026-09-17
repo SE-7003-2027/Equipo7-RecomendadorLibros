@@ -22,7 +22,11 @@ El proyecto apenas está arrancando, así que la mayoría de los features de aba
 
 ## Estado del proyecto
 
-🚧 En fase de diseño de requerimientos y definición de arquitectura.
+Para este avance inicial del Sprint 2, inicializamos el proyecto usando Spring Boot y Maven, configurados con Java 21.
+
+Hasta ahora armamos una API REST mínima. Por el momento solo existe el endpoint `GET /api/books`. Como todavía no conectamos la base de datos, los libros están guardados directamente en memoria como datos de prueba.
+
+También hicimos algunas pruebas básicas para asegurarnos de que la aplicación levanta bien y que el endpoint responde correctamente. Todavía nos falta agregar varias partes importantes del sistema, como el motor de recomendaciones real y la capa de persistencia.
 
 ## Equipo
 
@@ -45,29 +49,29 @@ Se van marcando conforme se completan.
 
 ## Stack
 
-*Propuesta inicial*
-
-| Capa | Tecnología |
-|---|---|
-| Backend | Java 21 + Spring Boot 3 (Spring Web, Spring Data JPA, Spring Security) |
-| Base de datos | PostgreSQL 16 |
-| Frontend | por definir |
-| Gestor de dependencias | Maven |
-| Pruebas | JUnit 5 + Mockito |
-| Contenedores | Docker + Docker Compose |
-| Documentación de API | OpenAPI / Swagger UI |
-| CI | GitHub Actions |
+| Capa | Tecnología | Estado |
+|---|---|---|
+| Backend | Java 21 + Spring Boot 3 (Spring Web) | ✅ Implementado |
+| Base de datos | PostgreSQL 16 | 📋 Planificado |
+| Persistencia | Spring Data JPA | 📋 Planificado |
+| Seguridad | Spring Security | 📋 Planificado |
+| Frontend | Por definir | 📋 Planificado |
+| Gestor de dependencias | Maven | ✅ Implementado |
+| Pruebas | JUnit 5 + Mockito | ✅ Implementado |
+| Contenedores | Docker + Docker Compose | 📋 Planificado |
+| Documentación de API | OpenAPI / Swagger UI | 📋 Planificado |
+| CI | GitHub Actions | 📋 Planificado |
 
 ## Cómo ejecutar el proyecto desde cero
 
-Esta sección hay que mantenerla al corriente conforme agreguemos herramientas, variables de entorno o pasos nuevos.
+Esta sección refleja únicamente lo que está implementado. Se actualizará conforme agreguemos base de datos, Docker y otras herramientas.
 
 ### Requisitos previos
 
 - Java 21 (JDK)
-- Maven 3.9+ (o el wrapper `./mvnw` )
-- Docker y Docker Compose (para levantar la base de datos)
 - Git
+
+> Docker y PostgreSQL **no son necesarios todavía**. Por ahora la aplicación usa datos en memoria.
 
 ### Pasos
 
@@ -78,31 +82,19 @@ Esta sección hay que mantenerla al corriente conforme agreguemos herramientas, 
    cd Equipo7-RecomendadorLibros
    ```
 
-2. Configurar las variables de entorno. Copiar el archivo de ejemplo y llenarlo:
-
-   ```bash
-   cp .env.example .env
-   ```
-
-3. Levantar la base de datos:
-
-   ```bash
-   docker compose up -d
-   ```
-
-4. Instalar dependencias:
-
-   ```bash
-   ./mvnw install
-   ```
-
-5. Levantar el proyecto:
+2. Levantar la aplicación:
 
    ```bash
    ./mvnw spring-boot:run
    ```
 
 La aplicación queda disponible en `http://localhost:8080`.
+
+### Endpoints disponibles
+
+| Método | Ruta | Descripción |
+|---|---|---|
+| GET | `/api/books` | Lista el catálogo completo de obras |
 
 ### Correr las pruebas
 
@@ -112,8 +104,8 @@ La aplicación queda disponible en `http://localhost:8080`.
 
 ## Documentación adicional
 
-| Documento | Ubicación |
-|---|---|
-| Guía de estilo | `docs/guia-de-estilo.md` |
-| Decisiones de arquitectura (ADRs) | `docs/adr/` |
-| Guía de contribución | `CONTRIBUTING.md` |
+| Documento | Ubicación | Estado |
+|---|---|---|
+| Guía de contribución | `CONTRIBUTING.md` | ✅ Disponible |
+| Guía de estilo | `docs/guia-de-estilo.md` | 📋 Pendiente |
+| Decisiones de arquitectura (ADRs) | `docs/adr/` | 📋 Pendiente |
