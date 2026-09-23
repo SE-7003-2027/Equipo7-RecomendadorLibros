@@ -1,18 +1,11 @@
 package mx.equipo7.recomendador.book;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
-/**
- * Controlador REST para el catálogo de obras.
- *
- * <p><b>Estado actual (Sprint 2 Demo):</b> los datos están en memoria.
- * En un sprint posterior se reemplazará la lista hardcodeada por un repositorio
- * JPA conectado a PostgreSQL.
- */
 @RestController
 @RequestMapping("/api/books")
 public class BookController {
@@ -30,12 +23,28 @@ public class BookController {
     );
 
     /**
-     * Devuelve el catálogo completo de obras.
-     *
-     * @return lista de todas las obras disponibles
+     * Devuelve el catálogo, permitiendo filtrar opcionalmente por autor o género.
      */
     @GetMapping
-    public List<Book> listAll() {
-        return catalog;
+    public List<Book> listAll(
+            @RequestParam(required = false) String author,
+            @RequestParam(required = false) String genre) {
+        
+        return catalog.stream()
+                .filter(b -> author == null || b.author().equalsIgnoreCase(author))
+                .filter(b -> genre == null || b.genre().equalsIgnoreCase(genre))
+                .collect(Collectors.toList());
+    }
+
+    /**
+     * Devuelve una obra específica por su ID.
+     */
+    @GetMapping("/{id}")
+    public ResponseEntity<Book> getById(@PathVariable Long id) {
+        return catalog.stream()
+                .filter(b -> b.id().equals(id))
+                .findFirst()
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 }
