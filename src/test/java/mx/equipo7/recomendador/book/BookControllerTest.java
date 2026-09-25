@@ -47,4 +47,25 @@ class BookControllerTest {
                 .andExpect(jsonPath("$[0].genre").isString())
                 .andExpect(jsonPath("$[0].format").isString());
     }
+
+    @Test
+    void listAll_todosTienenEstatusDePublicacionValido() throws Exception {
+        mockMvc.perform(get("/api/books"))
+                .andExpect(jsonPath("$[*].status").value(
+                        org.hamcrest.Matchers.everyItem(org.hamcrest.Matchers.in(
+                                java.util.List.of("ONGOING", "COMPLETED", "HIATUS", "CANCELLED")))));
+    }
+
+    @Test
+    void vistaWeb_debeServirseComoHtml() throws Exception {
+        mockMvc.perform(get("/index.html"))
+                .andExpect(status().isOk())
+                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML));
+    }
+
+    @Test
+    void vistaWeb_laRaizRedirigeAlIndex() throws Exception {
+        mockMvc.perform(get("/"))
+                .andExpect(forwardedUrl("index.html"));
+    }
 }

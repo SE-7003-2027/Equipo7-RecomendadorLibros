@@ -17,16 +17,15 @@ import java.util.List;
 @RequestMapping("/api/books")
 public class BookController {
 
-    // TODO (Sprint 3): reemplazar por BookRepository inyectado via constructor
     private final List<Book> catalog = List.of(
-            new Book(1L, "El nombre del viento",      "Patrick Rothfuss",  "Fantasía",  "BOOK"),
-            new Book(2L, "Akira",                      "Katsuhiro Otomo",   "Ciencia ficción", "MANGA"),
-            new Book(3L, "Watchmen",                   "Alan Moore",        "Superhéroes", "COMIC"),
-            new Book(4L, "Dune",                       "Frank Herbert",     "Ciencia ficción", "BOOK"),
-            new Book(5L, "Berserk",                    "Kentaro Miura",     "Fantasía oscura",  "MANGA"),
-            new Book(6L, "Saga",                       "Brian K. Vaughan",  "Ciencia ficción", "COMIC"),
-            new Book(7L, "La sombra del viento",       "Carlos Ruiz Zafón", "Misterio",  "BOOK"),
-            new Book(8L, "Fullmetal Alchemist",        "Hiromu Arakawa",    "Acción",    "MANGA")
+            new Book(1L, "El nombre del viento",      "Patrick Rothfuss",  "Fantasía",  "BOOK",  "ONGOING"),
+            new Book(2L, "Akira",                      "Katsuhiro Otomo",   "Ciencia ficción", "MANGA", "COMPLETED"),
+            new Book(3L, "Watchmen",                   "Alan Moore",        "Superhéroes", "COMIC", "COMPLETED"),
+            new Book(4L, "Dune",                       "Frank Herbert",     "Ciencia ficción", "BOOK",  "COMPLETED"),
+            new Book(5L, "Berserk",                    "Kentaro Miura",     "Fantasía oscura",  "MANGA", "ONGOING"),
+            new Book(6L, "Saga",                       "Brian K. Vaughan",  "Ciencia ficción", "COMIC", "HIATUS"),
+            new Book(7L, "La sombra del viento",       "Carlos Ruiz Zafón", "Misterio",  "BOOK",  "COMPLETED"),
+            new Book(8L, "Fullmetal Alchemist",        "Hiromu Arakawa",    "Acción",    "MANGA", "COMPLETED")
     );
 
     /**
