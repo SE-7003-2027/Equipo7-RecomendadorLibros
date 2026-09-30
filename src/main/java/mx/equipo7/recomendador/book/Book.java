@@ -13,6 +13,8 @@ package mx.equipo7.recomendador.book;
  *   <li>{@code author} – nombre del autor o autora</li>
  *   <li>{@code genre}  – género principal (ej. "Fantasía", "Romance", "Shonen")</li>
  *   <li>{@code format} – formato de la obra: BOOK, COMIC, MANGA</li>
+ *   <li>{@code status} – estatus de publicación: ONGOING (en publicación),
+ *       COMPLETED (finalizado), HIATUS (en pausa), CANCELLED (cancelado)</li>
  * </ul>
  */
 public record Book(
@@ -20,5 +22,6 @@ public record Book(
         String title,
         String author,
         String genre,
-        String format
+        String format,
+        String status
 ) {}

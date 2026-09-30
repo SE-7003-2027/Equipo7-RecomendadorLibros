@@ -24,9 +24,11 @@ El proyecto apenas está arrancando, así que la mayoría de los features de aba
 
 Para este avance inicial del Sprint 2, inicializamos el proyecto usando Spring Boot y Maven, configurados con Java 21.
 
-Hasta ahora armamos una API REST mínima. Por el momento solo existe el endpoint `GET /api/books`. Como todavía no conectamos la base de datos, los libros están guardados directamente en memoria como datos de prueba.
+Hasta ahora armamos una API REST mínima. Por el momento solo existe el endpoint `GET /api/books`. Como todavía no conectamos la base de datos, los libros están guardados directamente en memoria como datos de prueba. Cada obra incluye formato y estatus de publicación.
 
-También hicimos algunas pruebas básicas para asegurarnos de que la aplicación levanta bien y que el endpoint responde correctamente. Todavía nos falta agregar varias partes importantes del sistema, como el motor de recomendaciones real y la capa de persistencia.
+También agregamos una **vista web** en `http://localhost:8080` para explorar el catálogo: filtros por formato y estatus, búsqueda, agrupación por autor, género o estatus, y skeletons de carga. La documentación del proyecto está en la carpeta [`docs/wiki`](docs/wiki/Home.md).
+
+Hicimos algunas pruebas básicas para asegurarnos de que la aplicación levanta bien, que el endpoint responde correctamente y que la vista se sirve. Todavía nos falta agregar varias partes importantes del sistema, como el motor de recomendaciones real y la capa de persistencia (Sprint 3).
 
 ## Equipo
 
@@ -55,7 +57,7 @@ Se van marcando conforme se completan.
 | Base de datos | PostgreSQL 16 | 📋 Planificado |
 | Persistencia | Spring Data JPA | 📋 Planificado |
 | Seguridad | Spring Security | 📋 Planificado |
-| Frontend | Por definir | 📋 Planificado |
+| Frontend | HTML + CSS + JavaScript servidos por Spring Boot (vista básica) | ✅ Implementado (Sprint 2) |
 | Gestor de dependencias | Maven | ✅ Implementado |
 | Pruebas | JUnit 5 + Mockito | ✅ Implementado |
 | Contenedores | Docker + Docker Compose | 📋 Planificado |
@@ -88,7 +90,7 @@ Esta sección refleja únicamente lo que está implementado. Se actualizará con
    ./mvnw spring-boot:run
    ```
 
-La aplicación queda disponible en `http://localhost:8080`.
+La aplicación queda disponible en `http://localhost:8080`, donde se abre la vista web del catálogo.
 
 ### Endpoints disponibles
 
@@ -107,5 +109,6 @@ La aplicación queda disponible en `http://localhost:8080`.
 | Documento | Ubicación | Estado |
 |---|---|---|
 | Guía de contribución | `CONTRIBUTING.md` | ✅ Disponible |
+| Wiki del proyecto | [`docs/wiki/`](docs/wiki/Home.md) | ✅ Disponible |
 | Guía de estilo | `docs/guia-de-estilo.md` | 📋 Pendiente |
 | Decisiones de arquitectura (ADRs) | `docs/adr/` | 📋 Pendiente |
